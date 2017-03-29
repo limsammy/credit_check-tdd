@@ -5,9 +5,21 @@ require 'minitest/pride'
 require './lib/card_check'
 
 class CardCheckTest < Minitest::Test
-  def test_card_check_object_initalizes_type_as_nil
-    check = CardCheck.new
+  def test_card_check_object_initalizes_type_as_default
+    card = CardCheck.new
 
-    assert_nil check.type
+    assert_equal 'Default', card.card_type
+  end
+
+  def test_number_initializes_as_nil
+    card = CardCheck.new
+
+    assert_nil card.card_number
+  end
+
+  def test_card_check_type_assigns_type_to_AmEx
+    card = CardCheck.new('342804633855673')
+
+    assert_equal 'American Express', card.check_card_type
   end
 end
