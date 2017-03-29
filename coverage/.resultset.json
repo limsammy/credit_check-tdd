@@ -2,9 +2,15 @@
   "Unit Tests": {
     "coverage": {
       "/Users/sam/turing/1module/project_credit_check-tdd/lib/card_check.rb": [
-
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1490807465
+    "timestamp": 1490807525
   }
 }
