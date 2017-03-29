@@ -22,4 +22,10 @@ class CardCheckTest < Minitest::Test
 
     assert_equal 'American Express', card.check_card_type
   end
+
+  def test_sum_method_returns_fixnunm
+    card = CardCheck.new('4929735477250543')
+
+    assert_instance_of Fixnum, card.sum
+  end
 end
