@@ -28,4 +28,16 @@ class CardCheckTest < Minitest::Test
 
     assert_instance_of Fixnum, card.sum
   end
+
+  def test_validation_on_valid_card
+    card = CardCheck.new('4929735477250543')
+
+    assert card.valid?
+  end
+
+  def test_validation_on_invalid_card
+    card = CardCheck.new('5541801923795240')
+
+    refute card.valid?
+  end
 end

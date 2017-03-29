@@ -1,3 +1,5 @@
+require 'pry'
+
 class CardCheck
   attr_reader :card_type, :card_number
 
@@ -30,5 +32,13 @@ class CardCheck
     end
 
     final.inject(:+)
+  end
+
+  def valid?(card_number=@card_number)
+    if sum(card_number) % 10 == 0
+      true
+    else
+      false
+    end
   end
 end
