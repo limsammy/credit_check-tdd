@@ -40,4 +40,10 @@ class CardCheckTest < Minitest::Test
 
     refute card.valid?
   end
+
+  def test_auto_type_on_initialize
+    card = CardCheck.new('342804633855673')
+
+    assert_equal 'American Express', card.card_type
+  end
 end

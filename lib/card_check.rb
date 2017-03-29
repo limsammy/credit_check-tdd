@@ -4,12 +4,16 @@ class CardCheck
   attr_reader :card_type, :card_number
 
   def initialize(card_number=nil)
-    @card_type = 'Default'
     @card_number = card_number
+    @card_type = check_card_type(card_number)
   end
 
   def check_card_type(card_number=@card_number)
-    @card_type = 'American Express' if card_number.to_s[0..2] == '342'
+    if card_number.to_s[0..2] == '342'
+      @card_type = 'American Express'
+    else
+      @card_type = 'Default'
+    end
   end
 
   def format_card(card_number=@card_number)
